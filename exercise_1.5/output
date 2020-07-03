@@ -1,0 +1,13 @@
+1st terminal:
+docker run -d -it --name looper ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+2nd terminal:
+docker exec -it looper
+
+inside looper:
+apt-get update && apt-get install curl
+
+1st terminal:
+docker attach looper
+> helsinki.fi
+>> 301
