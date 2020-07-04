@@ -1,0 +1,15 @@
+FROM ubuntu:latest
+
+WORKDIR /tmp
+
+RUN apt-get update
+RUN apt-get install -y git vim curl wget
+
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get install -y zsh fonts-powerline nodejs
+RUN apt-get install -y openjdk-14-jdk
+
+# install oh-my-zsh
+RUN sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
+
+CMD ["/usr/bin/zsh"]
