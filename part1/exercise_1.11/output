@@ -1,0 +1,2 @@
+docker build -t backend-example-docker .
+docker run -p 8000:8000 -v /home/rnorden/devopswithdocker/part1/exercise_1.11/logs.txt:/mydir/logs.txt backend-example-docker
